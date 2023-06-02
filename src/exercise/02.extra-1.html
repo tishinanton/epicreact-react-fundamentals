@@ -27,8 +27,16 @@
     // with these React API calls
     // 💰 The example in the markdown file should be a good hint for you.
 
-    const props = {children: 'Hello World', className: 'container'}
-    const reactElement = React.createElement('div', props)
+    const helloProps = {children: 'Hello', key: 1}
+    const helloElement = React.createElement('span', helloProps)
+    const worldProps = {children: 'World', key: 2}
+    const worldElement = React.createElement('span', worldProps)
+
+    const containerProps = {
+      children: [helloElement, worldElement],
+      className: 'container',
+    }
+    const reactElement = React.createElement('div', containerProps)
     const root = ReactDOM.createRoot(rootElement)
     root.render(reactElement)
   </script>
